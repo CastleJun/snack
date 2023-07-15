@@ -9,13 +9,16 @@ import TabItem from '@/components/TabItem';
 import Toast from '@/components/Toast';
 import { useToastContext } from '@/context/toastContext';
 import { Item, Product } from '@/type/itemType';
+import { axiosInstance } from '@/util/axiosInstance';
 
 interface Props {
   snack: { alt: string; src: string }[];
   drink: { alt: string; src: string }[];
 }
 
+
 const AllItems = (props: Props) => {
+
   const { snack, drink } = props;
   const [itemList, setItemList] = useState<Product>('snack');
   const [selectItem, setSelectItem] = useState<Item[]>([]);
